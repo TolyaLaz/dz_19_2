@@ -1,0 +1,138 @@
+[
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "name": "Война и мир",
+    "description": "Л.Н. Толстой",
+    "photo": "",
+    "category": 4,
+    "price": 300,
+    "updated_at": "2024-07-10"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "name": "banana",
+    "description": null,
+    "photo": "",
+    "category": 2,
+    "price": 100,
+    "updated_at": "2024-07-10"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 3,
+  "fields": {
+    "name": "cucumbers",
+    "description": null,
+    "photo": "",
+    "category": 3,
+    "price": 50,
+    "updated_at": "2024-07-10"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "name": "TV LG",
+    "description": "Телевизор 55 дюймов, 4к QLED",
+    "photo": "",
+    "category": null,
+    "price": 30000,
+    "updated_at": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "lemon",
+    "description": null,
+    "photo": "",
+    "category": null,
+    "price": 120,
+    "updated_at": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "Ананасы",
+    "description": "Описание ананасов",
+    "photo": "",
+    "category": 2,
+    "price": 300,
+    "updated_at": null
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "name": "Samsung",
+    "description": "Galaxy S33",
+    "photo": "",
+    "category": 5,
+    "price": 50000,
+    "updated_at": "2024-07-11"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Мастер и Маргарита",
+    "description": null,
+    "photo": "",
+    "category": 4,
+    "price": 500,
+    "updated_at": "2024-07-11"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "name": "fruits",
+    "description": "any fruits"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "name": "vegetables",
+    "description": "any vegetables"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 4,
+  "fields": {
+    "name": "books",
+    "description": "any books"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "name": "Smartphones",
+    "description": "Смартфоны"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 6,
+  "fields": {
+    "name": "Акции",
+    "description": "Акции различных компаний"
+  }
+}
+]
