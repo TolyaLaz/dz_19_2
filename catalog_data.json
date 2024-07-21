@@ -3,136 +3,96 @@
   "model": "catalog.product",
   "pk": 1,
   "fields": {
-    "name": "Война и мир",
-    "description": "Л.Н. Толстой",
-    "photo": "",
-    "category": 4,
-    "price": 300,
-    "updated_at": "2024-07-10"
+    "name": "Продукт1",
+    "description": "Продукт1",
+    "photo": "catalog/photo/nokia.jpg",
+    "category": 1,
+    "price": 1000,
+    "updated_at": "2024-07-21"
   }
 },
 {
   "model": "catalog.product",
   "pk": 2,
   "fields": {
-    "name": "banana",
-    "description": null,
-    "photo": "",
-    "category": 2,
-    "price": 100,
-    "updated_at": "2024-07-10"
+    "name": "Продукт2",
+    "description": "Продукт2",
+    "photo": "catalog/photo/nokia2.jpg",
+    "category": 1,
+    "price": 2000,
+    "updated_at": "2024-07-21"
   }
 },
 {
   "model": "catalog.product",
   "pk": 3,
   "fields": {
-    "name": "cucumbers",
-    "description": null,
-    "photo": "",
-    "category": 3,
-    "price": 50,
-    "updated_at": "2024-07-10"
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 4,
-  "fields": {
-    "name": "TV LG",
-    "description": "Телевизор 55 дюймов, 4к QLED",
-    "photo": "",
-    "category": null,
-    "price": 30000,
-    "updated_at": null
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 5,
-  "fields": {
-    "name": "lemon",
-    "description": null,
-    "photo": "",
-    "category": null,
-    "price": 120,
-    "updated_at": null
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 6,
-  "fields": {
-    "name": "Ананасы",
-    "description": "Описание ананасов",
-    "photo": "",
+    "name": "Продукт3",
+    "description": "Продукт3",
+    "photo": "catalog/photo/watch.jpg",
     "category": 2,
-    "price": 300,
-    "updated_at": null
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 7,
-  "fields": {
-    "name": "Samsung",
-    "description": "Galaxy S33",
-    "photo": "",
-    "category": 5,
-    "price": 50000,
-    "updated_at": "2024-07-11"
-  }
-},
-{
-  "model": "catalog.product",
-  "pk": 8,
-  "fields": {
-    "name": "Мастер и Маргарита",
-    "description": null,
-    "photo": "",
-    "category": 4,
     "price": 500,
-    "updated_at": "2024-07-11"
+    "updated_at": "2024-07-21"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "name": "Продукт4",
+    "description": "Продукт4",
+    "photo": "catalog/photo/watch2.jpg",
+    "category": 2,
+    "price": 1000,
+    "updated_at": "2024-07-21"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "Продукт5",
+    "description": "Продукт5",
+    "photo": "catalog/photo/headphones.jpg",
+    "category": 3,
+    "price": 300,
+    "updated_at": "2024-07-21"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "Продукт6",
+    "description": "Продукт6",
+    "photo": "catalog/photo/headphones2.jpg",
+    "category": 3,
+    "price": 600,
+    "updated_at": "2024-07-21"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Категория1",
+    "description": "Категория1"
   }
 },
 {
   "model": "catalog.category",
   "pk": 2,
   "fields": {
-    "name": "fruits",
-    "description": "any fruits"
+    "name": "Категория2",
+    "description": "Категория2"
   }
 },
 {
   "model": "catalog.category",
   "pk": 3,
   "fields": {
-    "name": "vegetables",
-    "description": "any vegetables"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 4,
-  "fields": {
-    "name": "books",
-    "description": "any books"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 5,
-  "fields": {
-    "name": "Smartphones",
-    "description": "Смартфоны"
-  }
-},
-{
-  "model": "catalog.category",
-  "pk": 6,
-  "fields": {
-    "name": "Акции",
-    "description": "Акции различных компаний"
+    "name": "Категория3",
+    "description": "Категория3"
   }
 }
 ]
