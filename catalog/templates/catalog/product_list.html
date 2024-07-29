@@ -1,10 +1,14 @@
-{% extends 'home.html' %}
+{% extends 'catalog/home.html' %}
 {% load my_tags %}
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
-        {% for product in products %}
-        <div class="col-md-3">
+        <div class="d-flex justify-content-center mb-3">
+            <a class="btn btn-primary btn-sm" href="{% url 'catalog:product_create' %}" role="button">Добавить
+                продукт</a>
+        </div>
+        {% for product in object_list %}
+        <div class="col-md-4">
             <div class="card mb-4 box-shadow">
                 <img src="{{ product.photo | media_filter }}" class="card-img-top">
                 <div class="card-body">
@@ -12,6 +16,10 @@
                     <p class="card-text">{{ product.price }} RUB</p>
                     <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}"
                        role="button">Подробнее</a>
+                    <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}"
+                       role="button">Редактировать</a>
+                    <a class="btn btn-primary" href="{% url 'catalog:product_delete' product.pk %}"
+                       role="button">Удалить</a>
                 </div>
             </div>
         </div>

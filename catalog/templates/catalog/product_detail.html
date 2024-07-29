@@ -1,4 +1,4 @@
-{% extends 'home.html' %}
+{% extends 'catalog/home.html' %}
 {% load my_tags %}
 {% block content %}
 <div class="row text-center">
@@ -6,10 +6,10 @@
         <div class="card mb-4 box-shadow">
             <img src="{{ product.photo | media_filter }}" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text"> Категория: {{ product.category }}</p>
-                <p class="card-text"> Описание: {{ product.description }}</p>
-                <p class="card-text"> Цена: {{ product.price }} RUB</p>
+                <h5 class="card-title">{{ object.name }}</h5>
+                <p class="card-text"> Категория: {{ object.category }}</p>
+                <p class="card-text"> Описание: {{ object.description }}</p>
+                <p class="card-text"> Цена: {{ object.price }} RUB</p>
                 <a href="#" class="btn btn-primary" role="button">Купить</a>
                 <a class="btn btn-primary" href="{% url 'catalog:product_list' %}"
                        role="button">Назад</a>

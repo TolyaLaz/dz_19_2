@@ -1,0 +1,17 @@
+{% extends 'catalog/home.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>{{ post.title }}</h1>
+                <p>{{ post.text }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-warning" href="{% url 'posts:post_list' %}">Назад</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

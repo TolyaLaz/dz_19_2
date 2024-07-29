@@ -1,0 +1,28 @@
+{% extends 'catalog/home.html' %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Название:</label>
+        {{ form.title }}
+        <br />
+        <label for="text">Текст:</label>
+        <br />
+        {{ form.text }}
+        <br />
+        <label for="preview">Изображение:</label>
+        {{ form.preview }}
+        <br />
+        <label for="is_published">Опубликовано:</label>
+        {{ form.is_published }}
+        <br />
+        <button type="submit" class="btn btn-warning">
+            {% if object %}
+                Обновить
+            {% else %}
+                Создать
+            {% endif %}
+        </button>
+    </form>
+
+{% endblock %}

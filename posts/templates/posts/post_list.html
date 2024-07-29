@@ -1,0 +1,20 @@
+{% extends 'catalog/home.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">Статьи</h1>
+
+        <div class="row">
+            {% for post in post_list %}
+                {% include 'posts/includes/inc_card.html' with post=post %}
+            {% endfor %}
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <a href="{% url 'posts:post_form' %}" class="btn btn-warning w-25">Новая статья</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

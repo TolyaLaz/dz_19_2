@@ -1,0 +1,31 @@
+<div class="col-12">
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="card-title d-flex justify-content-between">
+                <h5 class="text-truncate">{{ post.title }}</h5>
+                {% if post.preview %}
+                    <img src="{{ post.preview.url }}"
+                         class="card-img-top img-fluid"
+                         style="height: 150px;
+                                width: 100px"
+                         alt="{{ post.title }}" />
+                {% endif %}
+            </div>
+            <div class="d-flex gap-2">
+                <p class="card-text text-truncate">Количество просмотров: {{ post.views_count }} /</p>
+                <p class="card-text text-truncate">Дата публикации: {{ post.created_at }} /</p>
+                <p class="card-text text-truncate">Дата последнего редактирования: {{ post.updated_at }}</p>
+            </div>
+
+            <div class="d-flex gap-2">
+                <a href="{% url 'posts:post_detail' pk=post.pk %}"
+                   class="btn btn-warning">Открыть</a>
+                <a href="{% url 'posts:post_update' pk=post.pk %}" class="btn btn-info">Редактировать</a>
+                <form method="post" action="{% url 'posts:post_delete' pk=post.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
