@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Product(models.Model):
@@ -28,7 +29,7 @@ class Product(models.Model):
         null=True,
         verbose_name="Категория",
         help_text="Введите категорию продукта",
-        related_name='categories',
+        related_name="categories",
     )
     price = models.IntegerField(
         verbose_name="Цена за покупку", help_text="Укажите цену продукта"
@@ -59,10 +60,31 @@ class Category(models.Model):
         max_length=200, verbose_name="Описание", help_text="Введите описание продукта"
     )
 
-
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
 
     def __str__(self):
         return self.name
+
+
+class Version(models.Model):
+    name = models.CharField(max_length=255, verbose_name=_("Название версии"))
+    number = models.IntegerField(unique=True, verbose_name=_("Номер версии"))
+    is_current = models.BooleanField(default=True, verbose_name=_("Текущая версия"))
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        verbose_name=_("Продукт"),
+        related_name="versions",
+        null=True,
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('Версия продукта')
+        verbose_name_plural = _('Версии продукта')
+        ordering = ['number']
+
+    def __str__(self):
+        return f'{self.number}. {self.name} ({self.is_current})'
