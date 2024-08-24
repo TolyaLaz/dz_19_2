@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.forms import inlineformset_factory
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from catalog.forms import ProductForm, VersionForm
 from catalog.models import Product, Version
 
@@ -15,17 +15,22 @@ class ProductDetailView(DetailView):
     model = Product
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
-    # fields = ('name', 'description', 'category', 'price', 'photo', 'updated_at')
     success_url = reverse_lazy('catalog:product_list')
+
+    def form_valid(self, form):
+        product = form.save()
+        user = self.request.user
+        product.owner = user
+        product.save()
+        return super().form_valid(form)
 
 
 class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductForm
-    # fields = ('name', 'description', 'category', 'price', 'photo', 'updated_at')
     success_url = reverse_lazy('catalog:product_list')
 
     def get_context_data(self, **kwargs):
@@ -37,14 +42,6 @@ class ProductUpdateView(UpdateView):
             context_data['formset'] = VersionFormset(instance=self.object)
         return context_data
 
-    # def form_valid(self, form):
-    #     formset = self.get_context_data()['formset']
-    #     self.object = form.save()
-    #     if formset.is_valid():
-    #         formset.instance = self.object
-    #         formset.save()
-    #
-    #     return super().form_valid(form)
     def form_valid(self, form):
         context_data = self.get_context_data()
         formset = context_data['formset']
@@ -55,6 +52,7 @@ class ProductUpdateView(UpdateView):
             return super().form_valid(form)
         else:
             return self.render_to_response(self.get_context_data(form=form, formset=formset))
+
 
 class ProductDeleteView(DeleteView):
     model = Product
@@ -68,7 +66,7 @@ class ContactsView(TemplateView):
 class VersionListView(ListView):
     model = Version
 
+
 class VersionCreateView(CreateView):
     model = Version
     fields = ('name', 'number', 'is_current')
-

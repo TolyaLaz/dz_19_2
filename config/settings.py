@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'catalog',
     'posts',
+    'users',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AUTH_USER_MODEL = 'users.User'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'TolyaLaz@yandex.ru'
+EMAIL_HOST_PASSWORD = 'poxkoxonbaaccxbx'
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+
+SERVER_EMAIL = 'EMAIL_HOST_USER'
+DEFAULT_FROM_EMAIL = 'TolyaLaz@yandex.ru'

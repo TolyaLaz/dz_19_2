@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from users.models import User
+
 
 class Product(models.Model):
     name = models.CharField(
@@ -40,6 +42,7 @@ class Product(models.Model):
         verbose_name="Дата последнего изменения",
         help_text="Укажите дату последнего изменения",
     )
+    owner = models.ForeignKey(User, verbose_name="Владелец", help_text="Укажите владельца продукта", blank=True, null=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = "Продукт"
