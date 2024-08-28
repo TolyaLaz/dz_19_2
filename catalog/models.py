@@ -43,11 +43,17 @@ class Product(models.Model):
         help_text="Укажите дату последнего изменения",
     )
     owner = models.ForeignKey(User, verbose_name="Владелец", help_text="Укажите владельца продукта", blank=True, null=True, on_delete=models.SET_NULL)
+    is_published = models.BooleanField(default=False, verbose_name=_('Опубликовано'))
 
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["name", "price"]
+        permissions = [
+            ("can_change_published", "Can change is_published status"),
+            ("can_change_description", "Can change description"),
+            ("can_change_category", "Can change category")
+        ]
 
     def __str__(self):
         return f"{self.name} {self.price}"
