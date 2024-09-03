@@ -4,8 +4,10 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.forms import inlineformset_factory
 from django.contrib.auth.mixins import LoginRequiredMixin
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 from django.core.exceptions import PermissionDenied
+
+from catalog.services import get_cached_list_categories
 
 
 class ProductListView(ListView):
@@ -76,3 +78,10 @@ class VersionListView(ListView):
 class VersionCreateView(CreateView):
     model = Version
     fields = ('name', 'number', 'is_current')
+
+
+class CategoryListView(ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_cached_list_categories()
